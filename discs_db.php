@@ -13,7 +13,7 @@
             "year" => 2020
         ],
         [
-            "path" => "bruno__mars.jpg",
+            "path" => "bruno_mars.jpg",
             "artist" => "Bruno Mars",
             "title" => "Doo-Wops & Hooligans",
             "year" => 2010
@@ -37,7 +37,7 @@
             "year" => 1994
         ],
         [
-            "path" => "green_day.ppg",
+            "path" => "green_day.png",
             "artist" => "Green Day",
             "title" => "American idiot",
             "year" => 2004
@@ -68,7 +68,7 @@
         ]
     ];
 
-    header('Content-Type: application/json');
+    // header('Content-Type: application/json');
 
-    echo json_encode($discs);
+    // echo json_encode($discs);
 ?>
