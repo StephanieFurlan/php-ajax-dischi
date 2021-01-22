@@ -8,5 +8,6 @@
 </head>
 <body>
     <div class="hello">hi</div>
+    <?php echo $var;?>
 </body>
 </html>
