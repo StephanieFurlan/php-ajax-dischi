@@ -15,7 +15,7 @@
         </div>
     </header>
     <div class="centered">
-        <div class="card-container clearfix">
+        <div class="card-container">
             <?php 
                 include __DIR__ . '/discs_db.php';
                 foreach($discs as $disc) { ?>
