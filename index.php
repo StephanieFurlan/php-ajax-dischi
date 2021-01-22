@@ -9,11 +9,7 @@
     <title>Document</title>
 </head>
 <body>
-    <header>
-        <div class="centered">
-            <img src="img/spotify_logo.png" alt="">
-        </div>
-    </header>
+    <?php include __DIR__ . '/partials/header.php' ?>
     <div class="centered">
         <div class="card-container">
             <?php 
