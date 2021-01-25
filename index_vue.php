@@ -18,7 +18,6 @@
                     <h3>{{ disc.title }}</h3>
                     <h5>{{ disc.artist }}</h5>
                     <p>{{ disc.year }}</p>
-                
                 </div>
             </div>
         </div>
