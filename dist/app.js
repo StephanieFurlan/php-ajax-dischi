@@ -1851,14 +1851,36 @@ var app = new vue__WEBPACK_IMPORTED_MODULE_1__.default({
   el: "#app",
   data: {
     title: "hello",
-    discs: []
+    discs: [],
+    genres: [],
+    genre: ''
+  },
+  methods: {
+    filter: function filter() {
+      var _this = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_0___default().get("server.php", {
+        params: {
+          genre: this.genre
+        }
+      }).then(function (response) {
+        _this.discs = response.data;
+      });
+    }
   },
   mounted: function mounted() {
-    var _this = this;
+    var _this2 = this;
 
-    axios__WEBPACK_IMPORTED_MODULE_0___default().get('discs_db.php').then(function (response) {
-      return _this.discs = response.data;
+    axios__WEBPACK_IMPORTED_MODULE_0___default().get('server.php').then(function (response) {
+      _this2.discs = response.data;
+
+      _this2.discs.forEach(function (disc) {
+        if (!_this2.genres.includes(disc.genre)) {
+          _this2.genres.push(disc.genre);
+        }
+      });
     });
+    console.log("hey");
   }
 });
 

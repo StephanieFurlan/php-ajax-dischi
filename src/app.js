@@ -5,11 +5,23 @@ var app = new Vue({
     data: {
         title: "hello",
         discs: [],
-        genres: []
+        genres: [],
+        genre: ''
+    },
+    methods: {
+        filter() {
+            axios.get("server.php", {
+                params: {
+                    genre: this.genre
+                }
+            }).then(response => {
+                this.discs = response.data;
+            })
+        }
     },
     mounted() {
         axios
-        .get('discs_db.php')
+        .get('server.php')
         .then(response => {
             this.discs = response.data;
             this.discs.forEach(disc => {
@@ -17,9 +29,7 @@ var app = new Vue({
                     this.genres.push(disc.genre);
                 }
             });
-        }
-            
-            
-        )
-  }
+        })
+        console.log("hey");
+    }
 }) 

@@ -11,7 +11,12 @@
 <body>
     <div id="app">
         <?php include __DIR__ . '/partials/header.php' ?>
+        
         <div class="centered">
+            <select v-model="genre" @change="filter" >
+                <option value="">All</option>
+                <option v-for="genre in genres">{{genre}}</option>
+            </select>
             <div class="card-container">
                 <div v-for="disc in discs" class="card">
                     <img :src="'img/' + disc.path" alt="">
@@ -22,6 +27,7 @@
             </div>
         </div>
     </div>
+    
     <script src="dist/app.js"></script>
 </body>
 </html>
